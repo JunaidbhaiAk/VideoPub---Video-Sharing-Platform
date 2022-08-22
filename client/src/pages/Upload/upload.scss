@@ -1,0 +1,110 @@
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+  ::-webkit-input-placeholder {@content} 
+}
+
+@include placeholder {
+  color: #DD2476;
+  font-family: "Montserrat", sans-serif;
+}
+.upload{
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width:1100px) {
+   flex-direction: column;   
+  }
+ &_title{
+   width: 550px;
+   font-size: 1.9rem;
+   color: #fff;
+   line-height:90px;
+   @media screen and (max-width:1100px) {
+      text-align: center;
+      font-size: 1.5rem;
+      width: 100%; 
+      padding-bottom: 1rem;  
+   }
+   span{
+    color: #fff;
+   }
+ }
+
+  &_form{
+    width: 400px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    h3{
+      margin-bottom: 1.3rem;
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: #DD2476;
+    }
+
+    .upload_input{
+      padding:0.6rem;
+      background: #fff;
+      border: 1px solid #DD2476;
+      outline: none;
+      color: #DD2476;
+      border-radius: 25px;
+      margin-bottom: 1rem;
+    }
+    p{
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #DD2476;
+    }
+
+    label{
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      position: relative;
+      background-color:transparent;
+      z-index: 1;
+      margin-bottom: 1rem!important;
+      overflow: hidden;
+      cursor: pointer;
+      input{
+        position: absolute;
+        left:75%;
+        font-size: 0;
+      }
+      input::-webkit-file-upload-button{
+        cursor: pointer;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        padding: 0.3rem 0.4rem;
+        background: #DD2476;
+        color: #fff;
+        border-radius: 15px;
+        border: none;
+      }
+    }
+    button{
+      align-self: flex-start;
+      padding: 0.4rem 1rem;
+      width: 150px;
+      border: 1px solid #DD2476;
+      border-radius: 15px;
+      background: none;
+      font-weight: 500;
+      font-size: 0.8rem;
+      color: #DD2476;
+      cursor: pointer;
+    }
+  }
+}
